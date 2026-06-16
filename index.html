@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Impact Report — 6th Annual Summit on Suicide-Safer Care in Clinical Practice</title>
+<meta name="description" content="The 6th Annual Summit on Suicide-Safer Care in Clinical Practice brought 430+ clinicians and advocates together with the developers of the field's leading interventions. An impact report from The Wellness Institute, in partnership with AFSP." />
+<style>
+  /* ===== Founders Grotesk — Summit brand typeface ===== */
+  @font-face{font-family:"Founders Grotesk";src:url("fonts/FoundersGrotesk-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Founders Grotesk";src:url("fonts/FoundersGrotesk-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Founders Grotesk";src:url("fonts/FoundersGrotesk-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Founders Grotesk";src:url("fonts/FoundersGrotesk-Semibold.otf") format("opentype");font-weight:600;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Founders Grotesk";src:url("fonts/FoundersGrotesk-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Founders Grotesk Text";src:url("fonts/FoundersGroteskText-Light.otf") format("opentype");font-weight:300 400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Founders Grotesk Text";src:url("fonts/FoundersGroteskText-Bold.otf") format("opentype");font-weight:600 700;font-style:normal;font-display:swap;}
+
+  :root{
+    /* Summit palette — the five flyer blues ONLY. No coral, green, gold, or grey. */
+    --blue-bright:#1878F3; --blue-strong:#1878F3; --blue-navy:#182D58; --blue-navy-700:#182D58;
+    --blue-sky:#74CEFF; --blue-cyan:#74CEFF; --blue-pale:#C9ECFF; --blue-mist:#E4F5FF;
+    /* legacy accent names remapped onto the blues so every reference stays on-brand */
+    --coral:#1878F3; --coral-600:#182D58; --coral-pale:#C9ECFF;
+    --green:#1878F3; --green-pale:#C9ECFF; --gold:#1878F3;
+    /* Summit key-art shape palette (exact poster values) */
+    --sh-pale:#E4F5FF; --sh-page:#C9ECFF; --sh-sky:#74CEFF; --sh-bright:#1878F3; --sh-navy:#182D58;
+    --ink:#182D58; --ink-700:#344A78; --ink-500:#586E9E; --ink-300:#93A4C8;
+    --line:#CFE3F7; --line-soft:#E4F0FC; --paper:#FFFFFF; --paper-50:#F2F8FF; --paper-100:#E8F3FD;
+    --ink-80:rgba(24,45,88,.82); --ink-60:rgba(24,45,88,.6);
+
+    --font-display:"Founders Grotesk","Helvetica Neue",Arial,sans-serif;
+    --font-body:"Founders Grotesk Text","Founders Grotesk",Georgia,serif;
+    --wrap:1200px; --r:18px; --r-xl:28px; --corner:16px; --corner-lg:40px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --shadow-md:0 8px 24px rgba(11,26,110,.09);
+    --shadow-lg:0 18px 48px rgba(11,26,110,.12);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--font-body);font-size:17px;line-height:1.6;font-weight:300;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+  }
+  ::selection{background:var(--blue-pale);color:var(--ink);}
+  img{max-width:100%;display:block;}
+
+  .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 32px;}
+
+  /* ---------- type ---------- */
+  .eyebrow{
+    font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--blue-bright);margin:0 0 20px;
+    display:flex;align-items:center;gap:13px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--blue-bright);display:inline-block;border-radius:2px;}
+  .eyebrow.light{color:var(--blue-cyan);}
+  .eyebrow.center{justify-content:center;}
+
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:500;letter-spacing:-.02em;line-height:1.06;margin:0;}
+  .h2{font-size:clamp(30px,4.4vw,50px);color:var(--ink);}
+  .lead{font-family:var(--font-body);font-weight:300;font-size:clamp(18px,1.9vw,21px);line-height:1.55;color:var(--ink-80);max-width:62ch;}
+  .lead-display{font-family:var(--font-display);font-weight:400;font-size:clamp(22px,2.7vw,30px);line-height:1.28;color:var(--ink);letter-spacing:-.012em;}
+
+  /* ---------- sections ---------- */
+  .section{padding:108px 0;position:relative;}
+  .section--tight{padding:84px 0;}
+  .section--white{background:#fff;}
+  .section--mist{background:var(--blue-mist);}
+  .rule{height:1px;background:var(--line);border:0;margin:0;}
+  .section-head{max-width:780px;margin-bottom:56px;}
+  .section-head .lead{margin-top:20px;}
+
+  /* ---------- header ---------- */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .3s var(--ease),border-color .3s var(--ease),backdrop-filter .3s var(--ease);
+    background:transparent;border-bottom:1px solid transparent;}
+  .nav{background:var(--blue-navy);}
+  .nav.scrolled{background:rgba(24,45,88,.95);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(255,255,255,.12);}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;}
+  .nav .brand{display:flex;align-items:center;gap:16px;}
+  .nav .brand img{height:34px;width:auto;}
+  .nav .brand .div{width:1px;height:24px;background:rgba(255,255,255,.25);}
+  .nav .brand .lbl{font-family:var(--font-display);font-size:14px;font-weight:500;color:rgba(255,255,255,.85);letter-spacing:.01em;}
+  .nav nav{display:flex;align-items:center;gap:30px;}
+  .nav nav a.lnk{font-family:var(--font-display);font-size:15px;font-weight:500;color:rgba(255,255,255,.78);text-decoration:none;transition:color .2s var(--ease);}
+  .nav nav a.lnk:hover{color:#fff;}
+  .btn-coral{
+    display:inline-block;font-family:var(--font-display);font-weight:600;font-size:15px;
+    color:#fff;background:var(--blue-bright);border-radius:0 var(--corner) 0 0;padding:.6rem 1.25rem;text-decoration:none;
+    transition:background .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease);white-space:nowrap;
+  }
+  .btn-coral:hover{background:var(--blue-navy);transform:translateY(-1px);box-shadow:0 10px 24px rgba(24,45,88,.28);}
+  .btn-coral.lg{font-size:17px;padding:.85rem 1.7rem;}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+    background:var(--blue-pale);color:var(--ink);overflow:hidden;padding:140px 0 0;}
+  .hero .glow{display:none;}
+  .hero .wrap{position:relative;z-index:3;padding-bottom:40px;}
+  .hero__kicker{font-family:var(--font-display);font-size:12.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue-bright);margin:0 0 28px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+  .hero__kicker .dot{width:4px;height:4px;border-radius:50%;background:var(--ink-300);}
+  .hero__kicker .muted{color:var(--ink-500);}
+  .hero h1{font-size:clamp(48px,8.6vw,108px);line-height:.96;color:var(--ink);font-weight:300;letter-spacing:-.025em;margin:0;}
+  .hero h1 span{display:block;}
+  .hero h1 .accent{color:var(--blue-bright);}
+  .hero__sub{margin:32px 0 0;max-width:62ch;font-family:var(--font-body);font-weight:300;font-size:clamp(17px,1.85vw,20.5px);line-height:1.58;color:var(--ink-700);}
+  .hero__sub b{color:var(--ink);font-weight:600;}
+  .hero__meta{margin-top:18px;font-family:var(--font-display);font-size:13px;font-weight:500;letter-spacing:.04em;color:var(--blue-bright);}
+  .hero__stats{position:relative;z-index:3;margin-top:56px;}
+  .hero__stats .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding-top:32px;padding-bottom:48px;}
+  .hstat{padding:4px 28px 4px 0;border-right:1px solid var(--line);}
+  .hstat:last-child{border-right:0;}
+  .hstat .n{font-family:var(--font-display);font-size:clamp(34px,4.6vw,54px);line-height:1;color:var(--blue-navy);font-weight:500;letter-spacing:-.02em;}
+  .hstat .n .plus{color:var(--blue-bright);}
+  .hstat .l{font-family:var(--font-display);font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-500);margin-top:13px;line-height:1.5;}
+
+  /* ---------- brand shapes (petal + heart-circle, exact from the Summit key art) ---------- */
+  .hero__art{position:absolute;top:0;right:0;bottom:0;width:min(50%,560px);pointer-events:none;overflow:hidden;z-index:4;}
+  .hero__art .stack{position:absolute;right:-72px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:0;}
+  .hero__art .stack img{display:block;width:212px;height:212px;}
+  .hero__art .heart-mark{position:relative;z-index:2;filter:drop-shadow(0 16px 42px rgba(0,0,0,.22));}
+  .closing__heart{width:88px;height:88px;display:block;margin:0 auto 30px;position:relative;z-index:2;}
+
+  /* ---------- intro ---------- */
+  .intro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:start;}
+  .intro-grid p{color:var(--ink-80);margin:0 0 18px;}
+  .intro-grid p:last-child{margin-bottom:0;}
+  .intro-aside{background:var(--blue-mist);border-radius:var(--r);border-left:3px solid var(--coral);padding:34px 32px;}
+  .intro-aside .q{font-family:var(--font-display);font-weight:400;font-size:clamp(19px,2vw,23px);line-height:1.32;color:var(--ink);letter-spacing:-.01em;}
+  .intro-aside cite{display:block;margin-top:20px;font-style:normal;font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--blue-bright);text-transform:uppercase;}
+
+  /* ---------- stat row ---------- */
+  .statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;}
+  .statrow .cell{background:#fff;padding:38px 30px;}
+  .statrow .cell .n{font-family:var(--font-display);font-size:clamp(38px,4.6vw,56px);line-height:1;color:var(--blue-navy);font-weight:500;letter-spacing:-.02em;}
+  .statrow .cell .n .plus{color:var(--coral);}
+  .statrow .cell .l{margin-top:14px;font-size:14.5px;color:var(--ink-80);line-height:1.5;}
+  .statrow .cell .sub{margin-top:6px;font-family:var(--font-display);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-500);}
+
+  /* ---------- reach ---------- */
+  .reach-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;}
+  .geo-number{display:flex;align-items:last baseline;gap:20px;flex-wrap:wrap;}
+  .geo-number .big{font-family:var(--font-display);font-size:clamp(84px,13vw,156px);line-height:.82;color:var(--blue-navy);font-weight:500;letter-spacing:-.03em;}
+  .geo-number .cap{font-family:var(--font-display);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-500);max-width:170px;line-height:1.6;}
+  .states{display:flex;flex-wrap:wrap;gap:7px;margin-top:34px;}
+  .states span{font-family:var(--font-display);font-size:12.5px;font-weight:500;letter-spacing:.04em;color:var(--blue-navy);
+    border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;}
+  .countries{margin-top:30px;padding-top:26px;border-top:1px solid var(--line);}
+  .countries .lab{font-family:var(--font-display);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-500);margin-bottom:14px;}
+  .countries .flags{display:flex;flex-wrap:wrap;gap:10px;}
+  .countries .flags span{font-size:14.5px;color:var(--blue-navy);background:var(--blue-pale);border-radius:999px;padding:7px 16px;font-family:var(--font-display);font-weight:500;}
+
+  /* discipline chart */
+  .chart-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:38px 36px 34px;box-shadow:var(--shadow-md);}
+  .chart-card .title{font-family:var(--font-display);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-500);margin-bottom:28px;}
+  .bar{display:grid;grid-template-columns:172px 1fr 44px;align-items:center;gap:16px;margin-bottom:15px;}
+  .bar .name{font-size:14px;color:var(--ink);text-align:right;line-height:1.3;font-family:var(--font-display);font-weight:500;}
+  .bar .track{height:14px;background:var(--line-soft);border-radius:999px;overflow:hidden;}
+  .bar .fill{height:100%;width:0;border-radius:999px;background:var(--blue-bright);transition:width 1.1s var(--ease);}
+  .bar .val{font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--blue-navy);text-align:right;}
+
+  /* ---------- program ---------- */
+  .showdown-banner{background:var(--blue-navy);color:#eaf3fb;border-radius:var(--r-xl);padding:54px 50px;position:relative;overflow:hidden;}
+  .showdown-banner .glow{display:none;}
+  .showdown-banner h3{font-size:clamp(24px,3vw,34px);color:#fff;max-width:20ch;position:relative;z-index:2;font-weight:500;}
+  .showdown-banner p{font-family:var(--font-body);font-weight:300;color:rgba(234,243,251,.82);max-width:58ch;margin:18px 0 0;position:relative;z-index:2;font-size:17px;}
+  .models{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;position:relative;z-index:2;}
+  .models span{font-family:var(--font-display);font-size:13px;font-weight:600;letter-spacing:.04em;color:#fff;border:1px solid rgba(130,227,246,.4);border-radius:999px;padding:8px 16px;}
+
+  .timeline{margin-top:60px;display:grid;grid-template-columns:1fr 1fr;gap:54px;}
+  .day h4{font-family:var(--font-display);font-size:25px;font-weight:500;margin:0;color:var(--ink);}
+  .day .dchip{font-family:var(--font-display);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:8px;}
+  .day .dsub{color:var(--ink-500);font-size:14.5px;margin:8px 0 28px;font-family:var(--font-display);font-weight:400;}
+  .sess{position:relative;padding:0 0 22px 26px;border-left:1px solid var(--line);}
+  .sess:last-child{padding-bottom:0;}
+  .sess::before{content:"";position:absolute;left:-5px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--blue-bright);border:2px solid #fff;box-shadow:0 0 0 1px var(--line);}
+  .sess .t{font-family:var(--font-display);font-size:11.5px;font-weight:500;letter-spacing:.05em;color:var(--ink-500);text-transform:uppercase;}
+  .sess .ttl{font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--ink);margin:4px 0 4px;line-height:1.32;}
+  .sess .who{font-size:14px;color:var(--ink-60);line-height:1.45;}
+
+  /* ---------- faculty ---------- */
+  .featured{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:60px;}
+  .fcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;text-align:center;box-shadow:var(--shadow-md);}
+  .disc{width:128px;height:128px;border-radius:0 var(--corner-lg) 0 0;margin:0 auto 22px;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;}
+  .disc.blue{background:var(--blue-pale);} .disc.coral{background:var(--blue-palest);} .disc.green{background:var(--blue-sky);}
+  .disc img{width:118px;height:auto;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(11,26,110,.14));}
+  .fcard .nm{font-family:var(--font-display);font-size:21px;font-weight:500;color:var(--ink);line-height:1.12;}
+  .fcard .cr{font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--blue-bright);margin-top:6px;}
+  .fcard .role{font-size:14px;color:var(--ink-500);margin-top:8px;line-height:1.4;}
+
+  .fac-center{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;margin-bottom:60px;}
+  .fac-bigstat .n{font-family:var(--font-display);font-size:clamp(80px,12vw,144px);line-height:.84;color:var(--blue-navy);font-weight:500;letter-spacing:-.03em;}
+  .fac-bigstat .n sup{font-size:.32em;color:var(--coral);top:-1.5em;}
+  .fac-bigstat .cap{font-size:16px;color:var(--ink-80);margin-top:20px;max-width:36ch;line-height:1.55;}
+  .fac-bigstat .cap b{color:var(--ink);font-weight:600;font-family:var(--font-display);}
+  .scale-viz{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:38px 36px 30px;box-shadow:var(--shadow-md);}
+  .scale-viz .title{font-family:var(--font-display);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-500);margin-bottom:34px;line-height:1.5;}
+  .axis{position:relative;height:88px;margin:0 6px;}
+  .axis .line{position:absolute;left:0;right:0;top:48px;height:2px;background:var(--line);}
+  .axis .mark{position:absolute;top:38px;width:2px;height:22px;background:var(--line);}
+  .axis .mark .ml{position:absolute;top:30px;left:50%;transform:translateX(-50%);font-family:var(--font-display);font-size:11px;color:var(--ink-500);}
+  .axis .dotwrap{position:absolute;top:0;left:0;right:0;}
+  .axis .fdot{position:absolute;top:30px;width:12px;height:12px;border-radius:50%;background:var(--blue-bright);border:2px solid #fff;box-shadow:0 1px 4px rgba(11,26,110,.3);transform:translate(-50%,0);opacity:0;transition:opacity .5s ease;}
+  .axis .band{position:absolute;top:18px;height:36px;border-radius:8px;background:rgba(24,120,243,.1);border:1px dashed rgba(24,120,243,.45);}
+  .scale-viz .note{margin-top:30px;font-size:13.5px;color:var(--ink-60);line-height:1.5;}
+  .scale-viz .note b{color:var(--blue-bright);font-weight:600;font-family:var(--font-display);}
+
+  .roster-lab{font-family:var(--font-display);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-500);margin:0 0 26px;}
+  .roster{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;}
+  .fac{background:#fff;padding:22px 22px;transition:background .3s ease;display:flex;gap:15px;align-items:flex-start;}
+  .fac:hover{background:var(--blue-mist);}
+  .fac .av{width:56px;height:56px;border-radius:0 14px 0 0;flex:0 0 auto;overflow:hidden;background:var(--blue-mist);}
+  .fac .av img{width:100%;height:100%;object-fit:cover;object-position:center;}
+  .fac .av.mono{display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--blue-navy);letter-spacing:.02em;}
+  .fac .txt{min-width:0;}
+  .fac .nm{font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);line-height:1.15;}
+  .fac .cr{font-family:var(--font-display);font-size:11.5px;font-weight:600;letter-spacing:.04em;color:var(--blue-bright);margin-top:5px;}
+  .fac .af{font-size:13px;color:var(--ink-500);margin-top:7px;line-height:1.4;}
+
+  /* ---------- feature quote ---------- */
+  .feature-quote{position:relative;border-radius:var(--r-xl);overflow:hidden;background:var(--blue-navy);color:#eef5fc;padding:72px 64px;}
+  .feature-quote::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--coral);}
+  .feature-quote .glow{position:absolute;right:-60px;bottom:-100px;width:340px;height:340px;border-radius:50%;background:var(--blue-strong);opacity:.3;filter:blur(50px);}
+  .feature-quote .mk{font-family:var(--font-display);font-size:90px;line-height:.6;color:var(--coral);position:relative;z-index:2;}
+  .feature-quote blockquote{font-family:var(--font-display);font-weight:400;font-size:clamp(24px,3.3vw,40px);line-height:1.22;letter-spacing:-.015em;margin:8px 0 0;max-width:26ch;position:relative;z-index:2;color:#fff;}
+  .feature-quote cite{display:block;margin-top:28px;font-style:normal;font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-cyan);position:relative;z-index:2;}
+
+  /* ---------- outcomes ---------- */
+  .out-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .out{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px 30px;box-shadow:var(--shadow-md);}
+  .out .ring-wrap{display:flex;align-items:center;gap:22px;}
+  .out svg{flex:0 0 auto;}
+  .out .ring-n{font-family:var(--font-display);font-size:40px;font-weight:500;color:var(--ink);line-height:1;}
+  .out .ring-n .pct{font-size:.5em;color:var(--ink-500);}
+  .out .ttl{font-family:var(--font-display);font-size:15.5px;font-weight:600;color:var(--ink);margin-top:22px;line-height:1.35;}
+  .out .dsc{font-size:13.5px;color:var(--ink-60);margin-top:8px;line-height:1.5;}
+  .nps-card{background:var(--blue-bright);color:#fff;border-radius:var(--r);padding:34px 30px;display:flex;flex-direction:column;justify-content:space-between;}
+  .nps-card .n{font-family:var(--font-display);font-size:66px;line-height:1;font-weight:500;}
+  .nps-card .ttl{font-family:var(--font-display);font-size:15.5px;font-weight:600;margin-top:18px;}
+  .nps-card .dsc{font-size:13.5px;color:rgba(255,255,255,.9);margin-top:8px;line-height:1.5;}
+  .nps-card .scaleline{margin-top:22px;height:6px;border-radius:4px;background:rgba(255,255,255,.28);position:relative;}
+  .nps-card .scaleline i{position:absolute;top:-4px;height:14px;width:14px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2);}
+
+  .elem{display:grid;grid-template-columns:1fr;gap:18px;}
+  .ebar{display:grid;grid-template-columns:1fr 50px;align-items:center;gap:18px;}
+  .ebar .lab{font-size:14.5px;color:var(--ink);font-family:var(--font-display);font-weight:500;}
+  .ebar .lab .sm{display:block;font-family:var(--font-display);font-size:10.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-500);margin-top:4px;}
+  .ebar .trk{grid-column:1 / -1;height:10px;background:var(--line-soft);border-radius:999px;overflow:hidden;margin-top:-6px;}
+  .ebar .fl{height:100%;width:0;background:var(--coral);border-radius:999px;transition:width 1.1s var(--ease);}
+  .ebar .pv{font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--blue-navy);text-align:right;}
+
+  /* ---------- quotes ---------- */
+  .quote-cols{column-count:3;column-gap:24px;}
+  .qcard{break-inside:avoid;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 26px;margin-bottom:24px;box-shadow:var(--shadow-md);}
+  .qcard p{font-size:15px;line-height:1.55;color:var(--ink);margin:0;font-family:var(--font-body);font-weight:300;}
+  .qcard p::before{content:"\201C";}
+  .qcard p::after{content:"\201D";}
+  .qcard cite{display:block;margin-top:16px;font-style:normal;font-family:var(--font-display);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-500);line-height:1.5;}
+  .qcard.big p{font-family:var(--font-display);font-size:19px;line-height:1.4;font-weight:400;}
+  .qcard.accent{background:var(--blue-mist);border-color:var(--blue-pale);}
+  .qcard.coral{background:var(--blue-pale);border-color:var(--blue-sky);}
+
+  /* ---------- partners ---------- */
+  .afsp{margin:8px 0 44px;text-align:center;}
+  .afsp .lab{font-family:var(--font-display);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-500);margin-bottom:16px;}
+  .afsp .nm{font-family:var(--font-display);font-size:clamp(26px,3.4vw,40px);font-weight:500;color:var(--ink);letter-spacing:-.015em;}
+  .afsp .afsp-logo{margin-top:20px;display:flex;justify-content:center;}
+  .afsp .afsp-logo img{height:66px;width:auto;}
+  .logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;max-width:980px;margin:0 auto 36px;background:#fff;border:1px solid var(--line);border-radius:0 var(--corner-lg) 0 0;overflow:hidden;}
+  .logos .logo{padding:24px 18px;display:flex;align-items:center;justify-content:center;height:104px;flex:1 1 120px;min-width:0;border-right:1px solid var(--line);}
+  .logos .logo:last-child{border-right:0;}
+  .logos .logo img{max-height:50px;max-width:100%;width:auto;object-fit:contain;}
+  .logos .logo--named{flex-direction:column;gap:9px;}
+  .logos .logo--named img{height:48px;width:48px;max-height:48px;border-radius:50%;object-fit:cover;}
+  .logos .logo--named span{font-family:var(--font-display);font-size:12px;font-weight:500;letter-spacing:.02em;color:var(--blue-navy);}
+  .pchips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:860px;margin:0 auto;}
+  .pchips span{font-family:var(--font-display);font-size:14.5px;font-weight:500;color:var(--blue-navy);background:#fff;border:1px solid var(--line);border-radius:999px;padding:11px 20px;}
+  .accred{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;}
+  .accred .ac{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;box-shadow:var(--shadow-md);}
+  .accred .ac .ic{font-family:var(--font-display);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:12px;}
+  .accred .ac .tt{font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);line-height:1.25;}
+  .accred .ac .dd{font-size:13.5px;color:var(--ink-500);margin-top:10px;line-height:1.55;}
+
+  /* ---------- closing ---------- */
+  .closing{background:var(--blue-navy);color:#eef5fc;padding:120px 0 110px;position:relative;overflow:hidden;text-align:center;}
+  .closing .glow{display:none;}
+  .closing .cg1{bottom:-160px;left:50%;transform:translateX(-50%);width:680px;height:420px;background:var(--blue-strong);opacity:.22;}
+  .closing .wrap{position:relative;z-index:2;}
+  .closing h2{color:#fff;font-size:clamp(30px,4.6vw,54px);max-width:20ch;margin:0 auto;line-height:1.08;}
+  .closing .sub{font-family:var(--font-body);font-weight:300;margin:28px auto 0;max-width:58ch;color:rgba(234,243,251,.84);font-size:clamp(17px,1.8vw,19px);line-height:1.6;}
+  .closing .ahead{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:780px;margin:60px auto 0;border-top:1px solid rgba(203,228,246,.2);padding-top:40px;}
+  .closing .ahead .c{padding:0 24px;border-right:1px solid rgba(203,228,246,.16);}
+  .closing .ahead .c:last-child{border-right:0;}
+  .closing .ahead .n{font-family:var(--font-display);font-size:clamp(34px,4vw,48px);font-weight:500;color:#fff;line-height:1;}
+  .closing .ahead .n .plus{color:var(--coral);}
+  .closing .ahead .l{font-family:var(--font-display);font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(203,228,246,.78);margin-top:13px;line-height:1.5;}
+  .closing .cta{margin-top:56px;}
+  .closing .url{margin-top:22px;font-family:var(--font-display);font-size:13px;font-weight:500;letter-spacing:.04em;color:rgba(130,227,246,.85);}
+
+  /* ---------- footer ---------- */
+  footer{background:#081247;color:rgba(203,228,246,.62);padding:48px 0;}
+  footer .wrap{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start;}
+  footer .org img{height:32px;width:auto;margin-bottom:14px;}
+  footer .fine{font-size:13px;line-height:1.65;max-width:62ch;}
+  footer .crisis{font-size:13px;color:var(--blue-cyan);margin-top:10px;font-family:var(--font-display);font-weight:500;}
+  footer a{color:rgba(203,228,246,.9);text-decoration:none;border-bottom:1px solid rgba(203,228,246,.28);}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+  .reveal.in{opacity:1;transform:none;}
+  .reveal.d1{transition-delay:.08s;} .reveal.d2{transition-delay:.16s;} .reveal.d3{transition-delay:.24s;} .reveal.d4{transition-delay:.32s;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:980px){
+    .intro-grid,.reach-grid,.fac-center{grid-template-columns:1fr;gap:42px;}
+    .timeline{grid-template-columns:1fr;gap:46px;}
+    .roster,.out-grid,.featured{grid-template-columns:repeat(2,1fr);}
+    .accred{grid-template-columns:1fr;}
+    .quote-cols{column-count:2;}
+    .hero__stats .wrap{grid-template-columns:repeat(3,1fr);gap:20px 0;}
+    .hstat:nth-child(3){border-right:0;}
+    .nav nav a.lnk{display:none;}
+  }
+  @media (max-width:680px){
+    .wrap{padding:0 20px;}
+    .section{padding:74px 0;}
+    .statrow{grid-template-columns:1fr 1fr;}
+    .statrow .cell{padding:26px 22px;}
+    .roster,.out-grid,.quote-cols,.featured{grid-template-columns:1fr;column-count:1;}
+    .hero__stats .wrap{grid-template-columns:1fr 1fr;}
+    .hstat{border-right:0;border-bottom:1px solid var(--line);padding-bottom:18px;}
+    .feature-quote{padding:48px 30px;}
+    .showdown-banner{padding:40px 28px;}
+    .closing .ahead{grid-template-columns:1fr;gap:26px;}
+    .closing .ahead .c{border-right:0;border-bottom:1px solid rgba(203,228,246,.16);padding-bottom:22px;}
+    .bar{grid-template-columns:118px 1fr 38px;gap:10px;}
+    .bar .name{font-size:12.5px;}
+    footer .wrap{flex-direction:column;}
+    .hero__art{display:none;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<div class="nav" id="nav">
+  <div class="wrap">
+    <div class="brand">
+      <img src="logos/twi-logo-white.png" alt="The Wellness Institute" />
+      <span class="div"></span>
+      <span class="lbl">Impact Report</span>
+    </div>
+    <nav>
+      <a class="lnk" href="#reach">Who we convened</a>
+      <a class="lnk" href="#program">The program</a>
+      <a class="lnk" href="#outcomes">Outcomes</a>
+      <a class="lnk" href="#faculty">Faculty</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" data-screen-label="Hero">
+  <div class="hero__art" aria-hidden="true">
+    <div class="stack">
+      <img class="petal-bright" src="brand/petal-bright.png" alt="" />
+      <img class="heart-mark" src="brand/heart-mark.png" alt="" />
+      <img class="petal-navy" src="brand/petal-navy.png" alt="" />
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="hero__kicker reveal in">
+      Impact Report
+      <span class="dot"></span> The Wellness Institute
+      <span class="dot"></span> <span class="muted">In partnership with AFSP</span>
+    </p>
+    <h1 class="reveal in d1">
+      <span>Competence.</span>
+      <span>Confidence.</span>
+      <span class="accent">Clarity.</span>
+    </h1>
+    <p class="hero__sub reveal in d2">
+      The <b>6th Annual Summit on Suicide-Safer Care in Clinical Practice</b> brought 430+ clinicians and advocates
+      together with the people who built the field's leading interventions — two days that turned the hardest
+      conversation in clinical practice into something providers feel ready to have.
+    </p>
+    <p class="hero__meta reveal in d3">March 10–11, 2026 · Live virtual conference</p>
+  </div>
+  <div class="hero__stats">
+    <div class="wrap">
+      <div class="hstat reveal in"><div class="n" data-count="430" data-suffix="+">0</div><div class="l">Professionals<br>registered</div></div>
+      <div class="hstat reveal in d1"><div class="n" data-count="49">0</div><div class="l">U.S. states &amp;<br>territories</div></div>
+      <div class="hstat reveal in d2"><div class="n" data-count="8">0</div><div class="l">Countries<br>represented</div></div>
+      <div class="hstat reveal in d3"><div class="n" data-count="17">0</div><div class="l">Expert<br>faculty</div></div>
+      <div class="hstat reveal in d4"><div class="n" data-count="8" data-decimals="1">0</div><div class="l">Accredited<br>CE credits</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ INTRO ============ -->
+<section class="section section--white" data-screen-label="Intro">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="reveal">
+        <p class="eyebrow">The work this serves</p>
+        <p class="lead-display" style="margin-bottom:28px;">Treating clients at risk for suicide is among the most demanding work in clinical practice — and the fear of saying the wrong thing keeps too many providers from saying anything at all.</p>
+        <p>The Suicide-Safer Care Summit exists to close that gap. For two days each year, The Wellness Institute convenes the researchers and clinicians who developed the field's most rigorously studied interventions and puts them in direct conversation with the practitioners who use them — answering real clinical questions, in plain language, with immediate utility.</p>
+        <p>This year's sixth edition reached its largest and most international audience yet, and the response was unambiguous: providers left more knowledgeable, more confident, and — in their own words — more hopeful.</p>
+      </div>
+      <div class="reveal d2">
+        <div class="intro-aside">
+          <p class="q">“This summit was so engaging, applicable, and full of caring and knowledgeable presenters that I left feeling energized and hopeful despite the distressing topic.”</p>
+          <cite>Psychologist · California · 2026 attendee</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ============ REACH ============ -->
+<section class="section section--mist" id="reach" data-screen-label="Reach">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Who we convened</p>
+      <h2 class="h2">A field, gathered in one room.</h2>
+      <p class="lead">Registration drew a multidisciplinary audience of frontline clinicians, program leaders, educators, and advocates — from nearly every U.S. state and four continents.</p>
+    </div>
+
+    <div class="statrow reveal d1" style="margin-bottom:60px;">
+      <div class="cell"><div class="n" data-count="430" data-suffix="+">0</div><div class="l">Registered clinicians &amp; advocates</div><div class="sub">across all sessions</div></div>
+      <div class="cell"><div class="n" data-count="257">0</div><div class="l">Chose the CE-credit pass</div><div class="sub">~60% of registrants</div></div>
+      <div class="cell"><div class="n" data-count="9" data-suffix="+">0</div><div class="l">Professional disciplines</div><div class="sub">represented</div></div>
+      <div class="cell"><div class="n" data-count="293">0</div><div class="l">Post-event evaluations</div><div class="sub">collected &amp; analyzed</div></div>
+    </div>
+
+    <div class="reach-grid">
+      <div class="reveal">
+        <div class="geo-number">
+          <span class="big" data-count="49">0</span>
+          <span class="cap">U.S. states &amp; territories represented — including D.C. and Puerto Rico</span>
+        </div>
+        <div class="states" id="states"></div>
+        <div class="countries">
+          <div class="lab">Four continents · eight countries</div>
+          <div class="flags">
+            <span>United States</span><span>Canada</span><span>Australia</span><span>New Zealand</span>
+            <span>Switzerland</span><span>Brazil</span><span>Panama</span><span>Poland</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="chart-card">
+          <div class="title">Disciplines represented · post-event evaluations (n = 293)</div>
+          <div class="bar"><div class="name">Social Work (LCSW / LMSW)</div><div class="track"><div class="fill" data-w="100"></div></div><div class="val">133</div></div>
+          <div class="bar"><div class="name">Counseling (LPC / LMHC)</div><div class="track"><div class="fill" data-w="38"></div></div><div class="val">51</div></div>
+          <div class="bar"><div class="name">Psychology (PhD / PsyD)</div><div class="track"><div class="fill" data-w="38"></div></div><div class="val">50</div></div>
+          <div class="bar"><div class="name">Marriage &amp; Family Therapy</div><div class="track"><div class="fill" data-w="17"></div></div><div class="val">22</div></div>
+          <div class="bar"><div class="name">Administration &amp; Leadership</div><div class="track"><div class="fill" data-w="11"></div></div><div class="val">14</div></div>
+          <div class="bar"><div class="name">Medicine &amp; Nursing</div><div class="track"><div class="fill" data-w="7"></div></div><div class="val">9</div></div>
+          <div class="bar"><div class="name">Academia &amp; Research</div><div class="track"><div class="fill" data-w="6"></div></div><div class="val">7</div></div>
+          <div class="bar"><div class="name">Allied &amp; Advocacy</div><div class="track"><div class="fill" data-w="6"></div></div><div class="val">7</div></div>
+          <div class="bar"><div class="name">Students &amp; Trainees</div><div class="track"><div class="fill" data-w="3"></div></div><div class="val">3</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAM ============ -->
+<section class="section section--white" id="program" data-screen-label="Program">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">What happened over two days</p>
+      <h2 class="h2">The field's leading models</h2>
+      <p class="lead">The Summit's signature format puts the developers of evidence-based interventions on the same stage, applying their approaches to the same real-world cases so clinicians can see exactly where each one fits.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="day reveal">
+        <div class="dchip">Day One · March 10</div>
+        <h4>The Clinical Showdown</h4>
+        <div class="dsub">Comparing the models on real cases</div>
+        <div class="sess"><div class="t">Round 1 · Suicide theories</div><div class="ttl">Joiner vs. Rudd</div><div class="who">Thomas Joiner, PhD · David Rudd, PhD</div></div>
+        <div class="sess"><div class="t">Round 2 · Primary interventions</div><div class="ttl">CT-SP vs. DBT</div><div class="who">Kate Comtois, PhD, MPH · Kelly Green, PhD</div></div>
+        <div class="sess"><div class="t">Round 3 · Brief interventions</div><div class="ttl">ASSIP vs. BCBT vs. CAMS</div><div class="who">Anja Gysin-Maillart, PhD · Craig Bryan, PsyD · Raymond Tucker, PhD</div></div>
+        <div class="sess"><div class="t">Round 4 · Youth interventions</div><div class="ttl">ABFT vs. IPT-A vs. DBT-A</div><div class="who">Guy Diamond, PhD · Alec Miller, PsyD · Anat Brunstein-Klomek, PhD · Jonathan Singer, PhD, LCSW</div></div>
+      </div>
+      <div class="day reveal d2">
+        <div class="dchip">Day Two · March 11</div>
+        <h4>Clinical considerations &amp; resources</h4>
+        <div class="dsub">From the consulting room to the whole practice</div>
+        <div class="sess"><div class="t">Empathy over fear</div><div class="ttl">Joining the Client in the Dark</div><div class="who">Stacey Freedenthal, PhD</div></div>
+        <div class="sess"><div class="t">Co-occurring risk</div><div class="ttl">The Silent Partner: Substance Use</div><div class="who">Arwen Podesta, MD</div></div>
+        <div class="sess"><div class="t">Technology in care</div><div class="ttl">AI, Chatbots &amp; Apps in Clinical Care</div><div class="who">John Torous, MD, MBI</div></div>
+        <div class="sess"><div class="t">Clinician sustainability</div><div class="ttl">Self-Care Is Not a Luxury</div><div class="who">Jeffrey Barnett, PsyD, ABPP</div></div>
+        <div class="sess"><div class="t">Lethal-means counseling</div><div class="ttl">Reframing Firearm Counseling</div><div class="who">Emmy Betz, MD, MPH</div></div>
+        <div class="sess"><div class="t">Practice readiness</div><div class="ttl">Crisis-Ready &amp; In Practice (closing panel)</div><div class="who">Jill Harkavy-Friedman, PhD · Jennifer Hartstein, PsyD</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ============ FACULTY ============ -->
+<section class="section section--mist" id="faculty" data-screen-label="Faculty">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">How the faculty were received</p>
+      <h2 class="h2">Eighteen of suicidology's foremost voices; and a near-perfect response.</h2>
+    </div>
+
+    <div class="fac-center">
+      <div class="fac-bigstat reveal">
+        <div class="n">99.6<sup>%</sup></div>
+        <div class="cap">of all <b>20,338</b> faculty evaluation-related responses agreed or strongly agreed that presenters knew their subject, taught effectively, and held the room — an average rating of <b>4.63 / 5.0</b>.</div>
+      </div>
+      <div class="scale-viz reveal d2">
+        <div class="title">Mean instructor rating · each marker = one of 17 evaluated faculty (scale 1–5)</div>
+        <div class="axis" id="axis">
+          <div class="band" id="band"></div>
+          <div class="line"></div>
+          <div class="mark" style="left:0%"><span class="ml">1</span></div>
+          <div class="mark" style="left:25%"><span class="ml">2</span></div>
+          <div class="mark" style="left:50%"><span class="ml">3</span></div>
+          <div class="mark" style="left:75%"><span class="ml">4</span></div>
+          <div class="mark" style="left:100%"><span class="ml">5</span></div>
+          <div class="dotwrap" id="dotwrap"></div>
+        </div>
+        <p class="note">Every single evaluated faculty member scored between <b>4.53 and 4.71</b> — uniform excellence with no weak link across the full two-day program.</p>
+      </div>
+    </div>
+
+    <p class="roster-lab reveal">The 2026 faculty</p>
+    <div class="roster reveal d1" id="roster"></div>
+  </div>
+</section>
+
+<!-- ============ FEATURE QUOTE ============ -->
+<section class="section--tight section--white">
+  <div class="wrap">
+    <div class="feature-quote reveal">
+      <div class="glow"></div>
+      <div class="mk">“</div>
+      <blockquote>TWI summits save lives — top experts, in one place, making suicide prevention understandable and actionable.</blockquote>
+      <cite>— Suicide-prevention advocate · paraphrased from 2026 attendee feedback</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTCOMES ============ -->
+<section class="section section--mist" id="outcomes" data-screen-label="Outcomes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">What changed for participants</p>
+      <h2 class="h2">Measurable gains in knowledge, confidence, and intent.</h2>
+      <p class="lead">Drawn from 293 post-event evaluations. The Summit set out to build competence, confidence, and clarity — and participants reported all three.</p>
+    </div>
+
+    <div class="out-grid reveal d1" style="margin-bottom:24px;">
+      <div class="out">
+        <div class="ring-wrap">
+          <svg width="84" height="84" viewBox="0 0 84 84" class="ring" data-pct="90"><circle cx="42" cy="42" r="36" fill="none" stroke="#E2EAF2" stroke-width="9"/><circle class="rc" cx="42" cy="42" r="36" fill="none" stroke="#0B1A6E" stroke-width="9" stroke-linecap="round" transform="rotate(-90 42 42)"/></svg>
+          <div class="ring-n" data-count="90"></div>
+        </div>
+        <div class="ttl">Enhanced knowledge &amp; understanding</div>
+        <div class="dsc">9 in 10 agreed the training significantly enhanced their understanding — nearly half “strongly agreed.”</div>
+      </div>
+      <div class="out">
+        <div class="ring-wrap">
+          <svg width="84" height="84" viewBox="0 0 84 84" class="ring" data-pct="86"><circle cx="42" cy="42" r="36" fill="none" stroke="#E2EAF2" stroke-width="9"/><circle class="rc" cx="42" cy="42" r="36" fill="none" stroke="#0090E3" stroke-width="9" stroke-linecap="round" transform="rotate(-90 42 42)"/></svg>
+          <div class="ring-n" data-count="86"></div>
+        </div>
+        <div class="ttl">Greater confidence with high-risk clients</div>
+        <div class="dsc">More than 8 in 10 felt more confident working with individuals at elevated risk of suicide.</div>
+      </div>
+      <div class="out">
+        <div class="ring-wrap">
+          <svg width="84" height="84" viewBox="0 0 84 84" class="ring" data-pct="90"><circle cx="42" cy="42" r="36" fill="none" stroke="#E2EAF2" stroke-width="9"/><circle class="rc" cx="42" cy="42" r="36" fill="none" stroke="#0B1A6E" stroke-width="9" stroke-linecap="round" transform="rotate(-90 42 42)"/></svg>
+          <div class="ring-n" data-count="90"></div>
+        </div>
+        <div class="ttl">Intent to pursue further training</div>
+        <div class="dsc">9 in 10 plan to learn more about the therapies and modalities covered — the Summit as a launch point.</div>
+      </div>
+    </div>
+
+    <div class="out-grid reveal d2">
+      <div class="nps-card">
+        <div>
+          <div class="n" data-count="62"></div>
+          <div class="ttl">Net Promoter Score</div>
+          <div class="dsc">Two-thirds of attendees are active promoters. Mean likelihood to recommend: 8.85 / 10.</div>
+        </div>
+        <div class="scaleline"><i style="left:81%"></i></div>
+      </div>
+      <div class="out">
+        <div class="ring-wrap">
+          <svg width="84" height="84" viewBox="0 0 84 84" class="ring" data-pct="98"><circle cx="42" cy="42" r="36" fill="none" stroke="#E2EAF2" stroke-width="9"/><circle class="rc" cx="42" cy="42" r="36" fill="none" stroke="#0B1A6E" stroke-width="9" stroke-linecap="round" transform="rotate(-90 42 42)"/></svg>
+          <div class="ring-n" data-count="98"></div>
+        </div>
+        <div class="ttl">Program objectives met</div>
+        <div class="dsc">Across 13 stated learning objectives and 2,700+ ratings, 98% confirmed objectives were achieved.</div>
+      </div>
+      <div class="out">
+        <div class="ring-wrap">
+          <svg width="84" height="84" viewBox="0 0 84 84" class="ring" data-pct="81"><circle cx="42" cy="42" r="36" fill="none" stroke="#E2EAF2" stroke-width="9"/><circle class="rc" cx="42" cy="42" r="36" fill="none" stroke="#0090E3" stroke-width="9" stroke-linecap="round" transform="rotate(-90 42 42)"/></svg>
+          <div class="ring-n" data-count="81"></div>
+        </div>
+        <div class="ttl">Plan to return next year</div>
+        <div class="dsc">81% are “very” or “most” likely to attend the 7th Annual Summit.</div>
+      </div>
+    </div>
+
+    <div class="chart-card reveal d2" style="margin-top:40px;">
+      <div class="title">What clinicians valued most in the Clinical Showdown · share rating each element “very informative”</div>
+      <div class="elem">
+        <div class="ebar"><div class="lab">Hearing directly from the developers &amp; researchers<span class="sm">access to the source</span></div><div class="pv">96%</div><div class="trk"><div class="fl" data-w="96"></div></div></div>
+        <div class="ebar"><div class="lab">Practical application of interventions to case examples<span class="sm">theory made usable</span></div><div class="pv">92%</div><div class="trk"><div class="fl" data-w="92"></div></div></div>
+        <div class="ebar"><div class="lab">Panel debate of different approaches &amp; methodologies<span class="sm">the showdown itself</span></div><div class="pv">90%</div><div class="trk"><div class="fl" data-w="90"></div></div></div>
+        <div class="ebar"><div class="lab">High-level overviews of the available interventions<span class="sm">the landscape at a glance</span></div><div class="pv">88%</div><div class="trk"><div class="fl" data-w="88"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VOICES ============ -->
+<section class="section section--white" id="voices" data-screen-label="Voices">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">In their own words</p>
+      <h2 class="h2">What participants told us.</h2>
+      <p class="lead">A selection of unedited comments from attendees who agreed to share their experience. They speak to the Summit's reach across disciplines, settings, and the country.</p>
+    </div>
+
+    <div class="quote-cols reveal d1">
+      <div class="qcard big accent"><p>As a clinical psychologist and suicidologist with two decades in the field, I found this summit to be a masterclass in the future of our work. The breadth of information was exceptional — I'm returning to my role overseeing clinical risk feeling deeply inspired and equipped with actionable insights.</p><cite>Psychologist · California</cite></div>
+      <div class="qcard"><p>Having nationally and internationally known experts in the field of suicide in one place sharing their expertise is priceless. I will be using the information in my practice with children and the adults in their lives.</p><cite>Social Worker · New York</cite></div>
+      <div class="qcard"><p>Top-notch presenters on the cutting edge of treating suicidal thinking and behavior.</p><cite>Licensed Counselor &amp; Administrator</cite></div>
+      <div class="qcard big"><p>I felt truly empowered with best practices for working with suicidal clients.</p><cite>Marriage &amp; Family Therapist · NY / AZ / CO</cite></div>
+      <div class="qcard"><p>An essential experience for all clinicians.</p><cite>Licensed Counselor &amp; Administrator</cite></div>
+      <div class="qcard"><p>The summit was packed full of extremely experienced presenters that kept me fully engaged despite being an online training of eight hours.</p><cite>Social Worker &amp; Professor · California</cite></div>
+      <div class="qcard coral"><p>A unique and creative approach exposing therapists to the various models and theoretical approaches. I loved the case discussion, which made the information more accessible.</p><cite>Marriage &amp; Family Therapist</cite></div>
+      <div class="qcard"><p>This was an incredible learning experience that showcases the work in suicide prevention across not just the U.S. but the world.</p><cite>Social Worker · NY / OH</cite></div>
+      <div class="qcard"><p>It felt like I was part of a community of smart, caring people who are coming together to support each other to support the people we work with.</p><cite>Social Worker · New York</cite></div>
+      <div class="qcard"><p>The summit provided a deeper understanding of suicide prevention and reassurance and confidence to face the fear associated with suicidal-ideation care.</p><cite>Care professional · Florida</cite></div>
+      <div class="qcard big"><p>Cutting-edge and practical information about suicide prevention that is essential for new and seasoned clinicians.</p><cite>Social Worker · New York</cite></div>
+      <div class="qcard"><p>So much useful information in a short time to help provide the best care to our patients and clients.</p><cite>Social Worker</cite></div>
+      <div class="qcard accent"><p>Attend this conference to learn how to break the stigma and be a beacon of hope for those who experience suicide. Sometimes just talking about suicide is the first step in saving a life.</p><cite>Social Worker · Massachusetts</cite></div>
+      <div class="qcard"><p>The pace, diversity, and depth of knowledge was compelling.</p><cite>Social Worker · Montana</cite></div>
+      <div class="qcard"><p>A wonderful opportunity to learn, engage, and re-invigorate.</p><cite>Licensed Counselor &amp; Professor · Alabama</cite></div>
+      <div class="qcard"><p>One of the most helpful presentations on suicide-safer care in clinical practice.</p><cite>Psychologist · Arkansas</cite></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ============ PARTNERS & ACCREDITATION ============ -->
+<section class="section section--mist" data-screen-label="Partners">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto;">
+      <p class="eyebrow center">Made possible together</p>
+      <h2 class="h2">Partners &amp; accreditation.</h2>
+    </div>
+
+    <div class="afsp reveal d1">
+      <div class="lab">Presented in partnership with</div>
+      <div class="afsp-logo"><img src="logos/partner-afsp.png" alt="American Foundation for Suicide Prevention" /></div>
+    </div>
+
+    <div class="reveal d2" style="text-align:center;margin-bottom:22px;">
+      <div class="afsp" style="margin:0;"><div class="lab">In collaboration with the field's leading organizations</div></div>
+    </div>
+    <div class="logos reveal d2">
+      <div class="logo"><img src="logos/partner-jed.png" alt="The Jed Foundation" /></div>
+      <div class="logo"><img src="logos/partner-save.png" alt="SAVE — Suicide Awareness Voices of Education" /></div>
+      <div class="logo"><img src="logos/partner-edc-zsi.png" alt="EDC / Zero Suicide Institute" /></div>
+      <div class="logo"><img src="logos/partner-sprc.png" alt="Suicide Prevention Resource Center" /></div>
+      <div class="logo"><img src="logos/partner-everymind.jpg" alt="EveryMind" /></div>
+      <div class="logo"><img src="logos/partner-cams.png" alt="CAMS-care" /></div>
+      <div class="logo logo--named"><img src="logos/partner-sophie-fund.jpg" alt="The Sophie Fund" /><span>The Sophie Fund</span></div>
+    </div>
+
+    <div class="accred reveal d3">
+      <div class="ac">
+        <div class="ic">Continuing Education</div>
+        <div class="tt">8.0 CE credits awarded</div>
+        <div class="dd">For beginner, intermediate, and advanced professionals — applicable to social workers, LMFTs, and LPCs/LMHCs in many states.</div>
+      </div>
+      <div class="ac">
+        <div class="ic">Approved Sponsor</div>
+        <div class="tt">APA &amp; NASW accredited</div>
+        <div class="dd">Approved by the American Psychological Association; approved by the National Association of Social Workers (#886875714-2321) for 8 contact hours.</div>
+      </div>
+      <div class="ac">
+        <div class="ic">State Recognition</div>
+        <div class="tt">New York State Education Dept.</div>
+        <div class="dd">TWI is an approved provider of continuing education for licensed psychologists, LMSWs, LCSWs, LMHCs, and LMFTs.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="org">
+      <img src="logos/twi-logo-white.png" alt="The Wellness Institute" />
+      <div class="fine">6th Annual Summit · Suicide-Safer Care in Clinical Practice · March 10–11, 2026. This impact report summarizes registration and post-event evaluation data from the 2026 program.</div>
+      <div class="crisis">If you or someone you know is struggling, the 988 Suicide &amp; Crisis Lifeline is available 24/7 — call or text 988.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // sticky nav
+  var nav = document.getElementById('nav');
+  function onScroll(){ if(window.scrollY>40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // US state chips
+  var states = ["NY","CA","FL","MD","OH","PA","TX","OK","NJ","MA","UT","WA","MO","MN","MI","IL","OR","AK","SD","NC","CT","DC","WI","IA","RI","ID","SC","GA","VA","VT","WY","IN","CO","AZ","NV","NM","NH","NE","ND","MT","ME","LA","KY","DE","AR","AL","TN","WV","PR"];
+  var sc = document.getElementById('states');
+  if(sc){ states.forEach(function(s){ var e=document.createElement('span'); e.textContent=s; sc.appendChild(e); }); }
+
+  // faculty roster
+  var faculty = [
+    ["Thomas Joiner","PhD","Florida State University"],
+    ["M. David Rudd","PhD, ABPP","University of Memphis · Creator, BCBT-SP"],
+    ["Jill Harkavy-Friedman","PhD","AFSP · Columbia University"],
+    ["Craig J. Bryan","PsyD, ABPP","The Ohio State University · Co-Developer, BCBT"],
+    ["Kate Comtois","PhD, MPH","University of Washington · CSPAR"],
+    ["Alec Miller","PsyD","Albert Einstein College of Medicine"],
+    ["Emmy Betz","MD, MPH","University of Colorado School of Medicine"],
+    ["Guy Diamond","PhD","Co-Developer, ABFT · ABFT International"],
+    ["Stacey Freedenthal","PhD, LCSW","University of Denver"],
+    ["Anja Gysin-Maillart","PhD","University of Bern · Co-Developer, ASSIP"],
+    ["Raymond Tucker","PhD","Louisiana State University"],
+    ["Kelly Green","PhD","University of Pennsylvania"],
+    ["Anat Brunstein-Klomek","PhD","Reichman University"],
+    ["John Torous","MD, MBI","Beth Israel Deaconess · Harvard Medical School"],
+    ["Jeffrey Barnett","PsyD, ABPP","Loyola University Maryland"],
+    ["Jennifer Hartstein","PsyD","Hartstein Psychological Services"],
+    ["Arwen Podesta","MD","Tulane University"],
+    ["Jonathan B. Singer","PhD, LCSW","Loyola University Chicago"]
+  ];
+  var facePhotos = {
+    "Thomas Joiner":"speakers/joiner.png", "M. David Rudd":"speakers/rudd.png",
+    "Jill Harkavy-Friedman":"speakers/harkavy-friedman.png", "Craig J. Bryan":"speakers/bryan.png",
+    "Kate Comtois":"speakers/comtois.png", "Alec Miller":"speakers/miller.png",
+    "Emmy Betz":"speakers/betz.png", "Guy Diamond":"speakers/diamond.png",
+    "Stacey Freedenthal":"speakers/freedenthal.png", "Anja Gysin-Maillart":"speakers/gysin-maillart.png",
+    "Raymond Tucker":"speakers/tucker.png", "Kelly Green":"speakers/green.png",
+    "Anat Brunstein-Klomek":"speakers/brunstein-klomek.png", "John Torous":"speakers/torous-flyer.png",
+    "Jeffrey Barnett":"speakers/barnett.png", "Jennifer Hartstein":"speakers/hartstein.png",
+    "Arwen Podesta":"speakers/podesta.png", "Jonathan B. Singer":"speakers/singer.png"
+  };
+  function initials(name){ return name.split(' ').filter(Boolean).map(function(w){return w[0];}).slice(0,2).join('').toUpperCase(); }
+  var rc = document.getElementById('roster');
+  if(rc){ faculty.forEach(function(f){
+    var d=document.createElement('div'); d.className='fac';
+    var p=facePhotos[f[0]];
+    var av = p ? '<div class="av"><img src="'+p+'" alt="'+f[0]+'"></div>'
+               : '<div class="av mono">'+initials(f[0])+'</div>';
+    d.innerHTML=av+'<div class="txt"><div class="nm">'+f[0]+'</div><div class="cr">'+f[1]+'</div><div class="af">'+f[2]+'</div></div>';
+    rc.appendChild(d);
+  }); }
+
+  // faculty rating dots
+  var means = [4.71,4.70,4.69,4.67,4.67,4.66,4.64,4.63,4.62,4.62,4.61,4.61,4.59,4.59,4.57,4.56,4.53];
+  var dw = document.getElementById('dotwrap');
+  var band = document.getElementById('band');
+  if(dw){
+    means.forEach(function(m,i){
+      var pct=(m-1)/4*100; var dot=document.createElement('div'); dot.className='fdot';
+      dot.style.left=pct+'%'; dot.style.transitionDelay=(0.4+i*0.05)+'s'; dw.appendChild(dot);
+    });
+    if(band){ var lo=(4.53-1)/4*100, hi=(4.71-1)/4*100; band.style.left=lo+'%'; band.style.width=(hi-lo)+'%'; }
+  }
+
+  function animateCount(el){
+    var target=parseFloat(el.getAttribute('data-count'));
+    var decimals=parseInt(el.getAttribute('data-decimals')||'0',10);
+    var suffix=el.getAttribute('data-suffix')||''; var prefix=el.getAttribute('data-prefix')||'';
+    if(reduce){ el.innerHTML=label(prefix,target,decimals,suffix); return; }
+    var dur=1400,start=null;
+    function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1); var e=1-Math.pow(1-p,3); var v=target*e;
+      el.innerHTML=prefix+(decimals?v.toFixed(decimals):Math.round(v))+sfx(suffix);
+      if(p<1)requestAnimationFrame(step); else el.innerHTML=label(prefix,target,decimals,suffix); }
+    requestAnimationFrame(step);
+  }
+  function sfx(s){ return s==='+'?'<span class="plus">+</span>':s; }
+  function label(prefix,target,decimals,suffix){ return prefix+target.toFixed(decimals)+sfx(suffix); }
+
+  function setRingLabel(el){
+    var t=parseFloat(el.getAttribute('data-count'));
+    if(reduce){ el.innerHTML=t+'<span class="pct">%</span>'; return; }
+    var dur=1400,start=null;
+    function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1); var e=1-Math.pow(1-p,3);
+      el.innerHTML=Math.round(t*e)+'<span class="pct">%</span>'; if(p<1)requestAnimationFrame(step); else el.innerHTML=t+'<span class="pct">%</span>'; }
+    requestAnimationFrame(step);
+  }
+  function fillRing(svg){
+    var pct=parseFloat(svg.getAttribute('data-pct')); var circle=svg.querySelector('.rc');
+    var r=36, C=2*Math.PI*r; circle.style.strokeDasharray=C; circle.style.strokeDashoffset=C;
+    requestAnimationFrame(function(){ circle.style.transition=reduce?'none':'stroke-dashoffset 1.4s cubic-bezier(.2,.7,.2,1)'; circle.style.strokeDashoffset=C*(1-pct/100); });
+  }
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return; var t=en.target; t.classList.add('in');
+      t.querySelectorAll('[data-count]').forEach(function(c){ if(c.dataset.done)return; c.dataset.done='1'; if(c.classList.contains('ring-n'))setRingLabel(c); else animateCount(c); });
+      t.querySelectorAll('.ring').forEach(function(s){ if(s.dataset.done)return; s.dataset.done='1'; fillRing(s); });
+      t.querySelectorAll('.fill,.fl').forEach(function(b){ if(b.dataset.done)return; b.dataset.done='1'; b.style.width=b.getAttribute('data-w')+'%'; });
+      io.unobserve(t);
+    });
+  },{threshold:.18, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  var sv=document.querySelector('.scale-viz');
+  if(sv){ var io2=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ document.querySelectorAll('.fdot').forEach(function(d){d.style.opacity='1';}); io2.disconnect(); } });},{threshold:.3}); io2.observe(sv); }
+
+  document.querySelectorAll('.hero [data-count]').forEach(function(c){ if(c.dataset.done)return; c.dataset.done='1'; animateCount(c); });
+})();
+</script>
+</body>
+</html>
