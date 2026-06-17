@@ -107,7 +107,7 @@
   .hero h1 .accent{color:var(--blue-bright);}
   .hero__sub{margin:32px 0 0;max-width:62ch;font-family:var(--font-body);font-weight:300;font-size:clamp(17px,1.85vw,20.5px);line-height:1.58;color:var(--ink-700);}
   .hero__sub b{color:var(--ink);font-weight:600;}
-  .hero__meta{margin-top:18px;font-family:var(--font-display);font-size:13px;font-weight:500;letter-spacing:.04em;color:var(--blue-bright);}
+  .hero__meta{margin-top:22px;font-family:var(--font-display);font-size:clamp(16px,1.7vw,20px);font-weight:600;letter-spacing:.02em;color:var(--blue-bright);}
   .hero__stats{position:relative;z-index:3;margin-top:56px;}
   .hero__stats .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding-top:32px;padding-bottom:48px;}
   .hstat{padding:4px 28px 4px 0;border-right:1px solid var(--line);}
@@ -282,6 +282,9 @@
   .accred .ac .ic{font-family:var(--font-display);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:12px;}
   .accred .ac .tt{font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink);line-height:1.25;}
   .accred .ac .dd{font-size:13.5px;color:var(--ink-500);margin-top:10px;line-height:1.55;}
+  .accred .ac--apa{display:flex;flex-direction:column;align-items:flex-start;gap:14px;}
+  .accred .ac--apa .apa-mark{width:88px;height:auto;border-radius:6px;border:1px solid var(--line);}
+  .accred .ac--apa .dd{margin-top:0;}
 
   /* ---------- closing ---------- */
   .closing{background:var(--blue-navy);color:#eef5fc;padding:120px 0 110px;position:relative;overflow:hidden;text-align:center;}
@@ -388,15 +391,15 @@
     </h1>
     <p class="hero__sub reveal in d2">
       The <b>6th Annual Summit on Suicide-Safer Care in Clinical Practice</b> brought 430+ clinicians and advocates
-      together with the people who built the field's leading interventions — two days that turned the hardest
-      conversation in clinical practice into something providers feel ready to have.
+      together with the creators of the field's leading interventions. Over two days, they transformed the most
+      daunting conversation in clinical care into one that providers now feel ready and equipped to navigate.
     </p>
     <p class="hero__meta reveal in d3">March 10–11, 2026 · Live virtual conference</p>
   </div>
   <div class="hero__stats">
     <div class="wrap">
       <div class="hstat reveal in"><div class="n" data-count="430" data-suffix="+">0</div><div class="l">Professionals<br>registered</div></div>
-      <div class="hstat reveal in d1"><div class="n" data-count="49">0</div><div class="l">U.S. states &amp;<br>territories</div></div>
+      <div class="hstat reveal in d1"><div class="n" data-count="47">0</div><div class="l">U.S. states<br>represented</div></div>
       <div class="hstat reveal in d2"><div class="n" data-count="8">0</div><div class="l">Countries<br>represented</div></div>
       <div class="hstat reveal in d3"><div class="n" data-count="17">0</div><div class="l">Expert<br>faculty</div></div>
       <div class="hstat reveal in d4"><div class="n" data-count="8" data-decimals="1">0</div><div class="l">Accredited<br>CE credits</div></div>
@@ -410,9 +413,9 @@
     <div class="intro-grid">
       <div class="reveal">
         <p class="eyebrow">The work this serves</p>
-        <p class="lead-display" style="margin-bottom:28px;">Treating clients at risk for suicide is among the most demanding work in clinical practice — and the fear of saying the wrong thing keeps too many providers from saying anything at all.</p>
-        <p>The Suicide-Safer Care Summit exists to close that gap. For two days each year, The Wellness Institute convenes the researchers and clinicians who developed the field's most rigorously studied interventions and puts them in direct conversation with the practitioners who use them — answering real clinical questions, in plain language, with immediate utility.</p>
-        <p>This year's sixth edition reached its largest and most international audience yet, and the response was unambiguous: providers left more knowledgeable, more confident, and — in their own words — more hopeful.</p>
+        <p class="lead-display" style="margin-bottom:28px;">Caring for clients at risk of suicide is some of the most demanding work in clinical practice — and the fear of saying the wrong thing keeps too many providers from saying anything at all.</p>
+        <p>The Suicide-Safer Care Summit exists to close that gap. Each year, The Wellness Institute brings the researchers and clinicians behind the field's most rigorously studied interventions into direct conversation with the practitioners who use them — answering real clinical questions in plain language, with tools providers can apply the next day.</p>
+        <p>The 2026 program reached its largest and most international audience to date, and the response was clear: attendees left more knowledgeable, more confident, and — in their own words — more hopeful.</p>
       </div>
       <div class="reveal d2">
         <div class="intro-aside">
@@ -431,8 +434,8 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Who we convened</p>
-      <h2 class="h2">A field, gathered in one room.</h2>
-      <p class="lead">Registration drew a multidisciplinary audience of frontline clinicians, program leaders, educators, and advocates — from nearly every U.S. state and four continents.</p>
+      <h2 class="h2">A field unified.</h2>
+      <p class="lead">Registration drew a multidisciplinary audience of frontline clinicians, program leaders, educators, and advocates — from across the United States and four continents.</p>
     </div>
 
     <div class="statrow reveal d1" style="margin-bottom:60px;">
@@ -445,8 +448,8 @@
     <div class="reach-grid">
       <div class="reveal">
         <div class="geo-number">
-          <span class="big" data-count="49">0</span>
-          <span class="cap">U.S. states &amp; territories represented — including D.C. and Puerto Rico</span>
+          <span class="big" data-count="47">0</span>
+          <span class="cap">U.S. states represented across the registered audience</span>
         </div>
         <div class="states" id="states"></div>
         <div class="countries">
@@ -481,7 +484,7 @@
     <div class="section-head reveal">
       <p class="eyebrow">What happened over two days</p>
       <h2 class="h2">The field's leading models</h2>
-      <p class="lead">The Summit's signature format puts the developers of evidence-based interventions on the same stage, applying their approaches to the same real-world cases so clinicians can see exactly where each one fits.</p>
+      <p class="lead">The Summit's signature format brought leading model developers together to apply their evidence-based interventions to the same real-world cases, offering clinicians a distinct comparative analysis.</p>
     </div>
 
     <div class="timeline">
@@ -516,13 +519,13 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">How the faculty were received</p>
-      <h2 class="h2">Eighteen of suicidology's foremost voices; and a near-perfect response.</h2>
+      <h2 class="h2">Eighteen of suicidology's foremost voices.</h2>
     </div>
 
     <div class="fac-center">
       <div class="fac-bigstat reveal">
         <div class="n">99.6<sup>%</sup></div>
-        <div class="cap">of all <b>20,338</b> faculty evaluation-related responses agreed or strongly agreed that presenters knew their subject, taught effectively, and held the room — an average rating of <b>4.63 / 5.0</b>.</div>
+        <div class="cap">of the <b>293</b> attendees who completed faculty evaluations agreed or strongly agreed that presenters knew their subject, taught effectively, and held the room — an average rating of <b>4.63 / 5.0</b>.</div>
       </div>
       <div class="scale-viz reveal d2">
         <div class="title">Mean instructor rating · each marker = one of 17 evaluated faculty (scale 1–5)</div>
@@ -536,7 +539,7 @@
           <div class="mark" style="left:100%"><span class="ml">5</span></div>
           <div class="dotwrap" id="dotwrap"></div>
         </div>
-        <p class="note">Every single evaluated faculty member scored between <b>4.53 and 4.71</b> — uniform excellence with no weak link across the full two-day program.</p>
+        <p class="note">Every single evaluated faculty member scored between <b>4.53 and 4.71</b> across the full two-day program.</p>
       </div>
     </div>
 
@@ -563,7 +566,7 @@
     <div class="section-head reveal">
       <p class="eyebrow">What changed for participants</p>
       <h2 class="h2">Measurable gains in knowledge, confidence, and intent.</h2>
-      <p class="lead">Drawn from 293 post-event evaluations. The Summit set out to build competence, confidence, and clarity — and participants reported all three.</p>
+      <p class="lead">The Summit set out to build competence, confidence, and clarity — and participants reported all three.</p>
     </div>
 
     <div class="out-grid reveal d1" style="margin-bottom:24px;">
@@ -638,7 +641,7 @@
     <div class="section-head reveal">
       <p class="eyebrow">In their own words</p>
       <h2 class="h2">What participants told us.</h2>
-      <p class="lead">A selection of unedited comments from attendees who agreed to share their experience. They speak to the Summit's reach across disciplines, settings, and the country.</p>
+      <p class="lead">The following unedited attendee comments demonstrate the Summit's broad reach across various disciplines, clinical settings, and geographic regions.</p>
     </div>
 
     <div class="quote-cols reveal d1">
@@ -691,20 +694,19 @@
     </div>
 
     <div class="accred reveal d3">
-      <div class="ac">
-        <div class="ic">Continuing Education</div>
-        <div class="tt">8.0 CE credits awarded</div>
-        <div class="dd">For beginner, intermediate, and advanced professionals — applicable to social workers, LMFTs, and LPCs/LMHCs in many states.</div>
+      <div class="ac ac--apa">
+        <img class="apa-mark" src="logos/apa-approved-sponsor.jpg" alt="APA Approved Sponsor" />
+        <div class="dd">The Wellness Institute is approved by the American Psychological Association (APA) to sponsor continuing education for psychologists. The Wellness Institute maintains responsibility for this program and its content.</div>
       </div>
       <div class="ac">
-        <div class="ic">Approved Sponsor</div>
-        <div class="tt">APA &amp; NASW accredited</div>
-        <div class="dd">Approved by the American Psychological Association; approved by the National Association of Social Workers (#886875714-2321) for 8 contact hours.</div>
+        <div class="ic">National Association of Social Workers</div>
+        <div class="tt">8 CE contact hours</div>
+        <div class="dd">This program is approved by the National Association of Social Workers (Approval #886875714-2321) for 8 continuing education contact hours.</div>
       </div>
       <div class="ac">
-        <div class="ic">State Recognition</div>
-        <div class="tt">New York State Education Dept.</div>
-        <div class="dd">TWI is an approved provider of continuing education for licensed psychologists, LMSWs, LCSWs, LMHCs, and LMFTs.</div>
+        <div class="ic">New York State Education Department</div>
+        <div class="tt">Approved CE provider</div>
+        <div class="dd">The New York State Education Department recognizes the Wellness Institute as an approved provider of continuing education for licensed psychologists, LMSWs, LCSWs, LMHCs and LMFTs.</div>
       </div>
     </div>
   </div>
@@ -731,7 +733,7 @@
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
   // US state chips
-  var states = ["NY","CA","FL","MD","OH","PA","TX","OK","NJ","MA","UT","WA","MO","MN","MI","IL","OR","AK","SD","NC","CT","DC","WI","IA","RI","ID","SC","GA","VA","VT","WY","IN","CO","AZ","NV","NM","NH","NE","ND","MT","ME","LA","KY","DE","AR","AL","TN","WV","PR"];
+  var states = ["NY","CA","FL","MD","OH","PA","TX","OK","NJ","MA","UT","WA","MO","MN","MI","IL","OR","AK","SD","NC","CT","WI","IA","RI","ID","SC","GA","VA","VT","WY","IN","CO","AZ","NV","NM","NH","NE","ND","MT","ME","LA","KY","DE","AR","AL","TN","WV"];
   var sc = document.getElementById('states');
   if(sc){ states.forEach(function(s){ var e=document.createElement('span'); e.textContent=s; sc.appendChild(e); }); }
 
