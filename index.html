@@ -274,7 +274,8 @@
   .afsp .afsp-logo img{height:66px;width:auto;}
   .logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;max-width:980px;margin:0 auto 36px;background:#fff;border:1px solid var(--line);border-radius:0 var(--corner-lg) 0 0;overflow:hidden;}
   .logos .logo{padding:24px 18px;display:flex;align-items:center;justify-content:center;height:104px;flex:1 1 120px;min-width:0;border-right:1px solid var(--line);}
-  .logos .logo:last-child{border-right:0;}
+  .logos .logo:last-child,.logos .logo--rowend{border-right:0;}
+  .logos .logo-break{flex:0 0 100%;height:0;padding:0;border:0;}
   .logos .logo img{max-height:50px;max-width:100%;width:auto;object-fit:contain;}
   .logos .logo--named{flex-direction:column;gap:9px;}
   .logos .logo--named img{height:48px;width:48px;max-height:48px;border-radius:50%;object-fit:cover;}
@@ -661,7 +662,8 @@
       <div class="logo"><img src="logos/partner-save.png" alt="SAVE: Suicide Awareness Voices of Education" /></div>
       <div class="logo"><img src="logos/partner-edc-zsi.png" alt="EDC / Zero Suicide Institute" /></div>
       <div class="logo"><img src="logos/partner-sprc.png" alt="Suicide Prevention Resource Center" /></div>
-      <div class="logo"><img src="logos/partner-everymind.jpg" alt="EveryMind" /></div>
+      <div class="logo logo--rowend"><img src="logos/partner-everymind.jpg" alt="EveryMind" /></div>
+      <div class="logo-break" aria-hidden="true"></div>
       <div class="logo"><img src="logos/partner-cams.png" alt="CAMS-care" /></div>
       <div class="logo"><img src="logos/partner-njhsa.jpg" alt="Network of Jewish Human Service Agencies" /></div>
       <div class="logo"><img src="logos/partner-spts.jpg" alt="Society for the Prevention of Teen Suicide" /></div>
